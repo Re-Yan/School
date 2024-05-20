@@ -122,7 +122,7 @@ void enqueue(int num, int qSize, int *queue){
 void dequeue(int *queue, int qSize){
     if(front < 0 && rear < 0){      //if queue is empty
         printf("\n\nQUEUE UNDERFLOW: Cannot dequeue from an EMPTY queue\n");
-        printf("Select (1)Enqueue from the Operations Menu to insert an entry in the Queue\n\n");
+        printf("Select (1)Enqueue from the Operations Menu to insert an entry into the Queue\n\n");
     }else if(front == rear){            //if queue only has 1 entry
         queue[front] = queue[front+1]; 
         front = -1;         //declare that there are no existing entries in the queue. QUEUE IS NOW EMPTY
