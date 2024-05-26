@@ -144,10 +144,14 @@ void pop(int stkSize, int *stack){
 }
 
 void display(int *stack){
+    if(top < 0 && bottom < 0){
+        printf("\nStack is currently EMPTY. No values to DISPLAY\n\n");
+    }else{
     printf("\nAll Values Currently in the Stack: \n\n");
     for(int i = top; i >= bottom; i--){
         printf("\n\t%d", stack[i]); printf("\n\n\tv\n"); 
     } 
+    }
 }
 
 
