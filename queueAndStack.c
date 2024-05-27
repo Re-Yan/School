@@ -103,6 +103,7 @@ void stackFunction(void){
             break;
         case 6:
             clearScreen();
+            free(stack);                // frees the dynamically allocated array
             exit(1);
         default:
             clearScreen();
@@ -130,9 +131,9 @@ void pop(int stkSize, int *stack){
     if(top < 0 && bottom < 0){     // if stack is empty
         printf("\n\nSTACK UNDERFLOW: Cannot pop from an empty Stack\n");
         printf("Select (1)Push from the Operations Menu to insert an entry into the Stack\n\n");
-    }else if(top == bottom){        //if the stack has only 1 entry
+    }else if(top == bottom){        // if the stack has only 1 entry
         stack[top] = stack[0];
-        top = -1;                    // no more existing entries in the stack. STACK IS NOW EMPTY
+        top = -1;                   // no more existing entries in the stack. STACK IS NOW EMPTY
         bottom = -1;
         printf("\nPopped Last Entry. STACK IS NOW EMPTY\n\n");
     }else{                          //if stack has more than 1 entry
@@ -234,6 +235,7 @@ void queueFunction(void){
                 break;
             case 7:
                 clearScreen();
+                free(queue);         // frees the dynamically allocated memory
                 exit(1);
             default:
                 clearScreen();
